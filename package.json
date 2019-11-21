@@ -1,0 +1,49 @@
+{
+  "name": "@flesch/net-promoter-score",
+  "description": "Calculate a \"Net Promoter Score\" from an array of integers",
+  "homepage": "https://github.com/flesch/net-promoter-score",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "author": {
+    "email": "john@fles.ch",
+    "name": "John Flesch",
+    "url": "https://fles.ch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flesch/net-promoter-score.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flesch/net-promoter-score/issues"
+  },
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.7.2",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "chai": "^4.2.0",
+    "chokidar-cli": "^2.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "eslint": "eslint",
+    "build": "babel src --out-dir dist --extensions \".ts\"",
+    "prepare": "npm run prettier && npm run build",
+    "prettier": "prettier --write \"**/*.{js,ts,json}\"",
+    "watch": "npm run prepare && chokidar \"src/index.ts\" --command \"npm run prepare\" --throttle 1000"
+  },
+  "license": "MIT"
+}
